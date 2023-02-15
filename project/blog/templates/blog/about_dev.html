@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+{{ title }}
+
+{% endblock title %}
+
+{% block main %}
+
+
+
+<!-- for sikli ochildi 'views' orqali kelayotgan
+'context' o'zgaruvchisi ichidagi 'developers'
+kaliti ostidagi qiymat siklga solindi -->
+<div class="container mt-4 mb-4">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for developer in developers %}
+    <div class="col">
+        <div class="card">
+            <img src="{{ developer.get_photo }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Full Name: {{ developer.full_name }}</h5>
+                <h6>Job: {{ developer.job }}</h6>
+                <p class="card-text">BIO: {{ developer.bio }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+
+
+{% endblock main %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="d-flex justify-content-between">
+            <div class="col-md-5">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                     class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Username: @{{ request.user.username }}</h5>
+                    <h6>User id: {{ request.user.pk }}</h6>
+                    <h6>Firstname: {{ request.user.first_name }}</h6>
+                    <h6>Lastname: {{ request.user.last_name }}</h6>
+                    <h6>Email: {{ request.user.email }}</h6>
+                    <a href="" class="btn btn-primary">
+                        Изменить данные
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}
+
